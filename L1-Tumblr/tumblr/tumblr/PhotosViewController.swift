@@ -14,6 +14,8 @@ class PhotosViewController: UIViewController , UITableViewDataSource, UITableVie
         return posts.count
     }
     
+      var image: UIImage!
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath as IndexPath) as! PhotoCell
@@ -54,6 +56,13 @@ class PhotosViewController: UIViewController , UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
+        
+        
+        
         self.TableView.delegate = self
         self.TableView.dataSource = self
         TableView.rowHeight = 250
@@ -86,7 +95,21 @@ class PhotosViewController: UIViewController , UITableViewDataSource, UITableVie
       
     }
     
-   
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ let vc = segue.destination as! PhotosDetailsViewController
+        let cell = sender as! PhotoCell
+        if let indexPath = TableView.indexPath(for:cell){
+            let post = posts[indexPath.row]
+            if let photos = post["photos"] as? [[String:Any]] {
+                let photo = photos[0]
+                let originalSize = photo["original_size"] as! [String: Any]
+                let urlString = originalSize["url"] as! String
+                vc.photoUrlString = urlString
+            }
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
