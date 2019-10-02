@@ -2,7 +2,47 @@
 
 Flix is an app that allows users to browse movies from the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-📝 `NOTE - PASTE PART 2 SNIPPET HERE:` 
+# Lab 3 - *Flix*
+
+Time spent: **1** hour spent in total
+
+## User Stories
+
+The following **required** user stories are complete:
+
+- The following screens use AutoLayout to adapt to various orientations and screen sizes
+- [X] Movie feed view (+3pt)
+- [ ] Detail view (+2pt)
+
+The following **stretch** user stories are implemented:
+
+- [ ] Dynamic Height Cells (+1)
+- [ ] Collection View AutoLayout (+2)
+
+The following **additional** user stories are implemented:
+
+- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+
+Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
+
+1. I could not figure out how to use contraints properly
+2.
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='FlixThree.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+## Notes
+
+Contraints were confusing and I could not figure out how to get them right
+
+## License
+
+Copyright [2019] [Chris Vitale]
+
 ## Flix Part 2
 
 ### User Stories
