@@ -16,10 +16,15 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweet()
-
-
+        
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTweet()
+    }
+    
     
     func loadTweet(){
         
@@ -78,6 +83,9 @@ class HomeTableViewController: UITableViewController {
         }
         
         
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.sR(tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         
         return cell
